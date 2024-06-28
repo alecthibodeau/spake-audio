@@ -1,4 +1,9 @@
 :root {
-  --color-green-medium: #2e7e19;
-  --color-green-light: #f3f8f2;
+  --color-spake-green: #2e7e19;
+  --color-spake-lichen: #f3f8f2;
+  --color-spake-blue: #1874ff;
+  --color-spake-purple: #6d2dbe;
+  --color-spake-pink: #ff98dc;
+  --color-spake-yellow: #ffd600;
+  --color-spake-brown: #531009;
 }
