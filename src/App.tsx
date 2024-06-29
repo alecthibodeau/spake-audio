@@ -1,13 +1,14 @@
 import './App.css'
 
-function App() {
+/* Components */
+import Header from './components/Header';
+import Main from './components/Main';
+
+export default function App() {
   return (
     <>
-      <div>
-        Spake Audio
-      </div>
+      <Header />
+      <Main />
     </>
   )
 }
-
-export default App
