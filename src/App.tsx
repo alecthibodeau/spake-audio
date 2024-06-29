@@ -1,4 +1,4 @@
-import './App.css'
+import './App.css';
 
 /* Components */
 import Header from './components/Header';
@@ -10,5 +10,5 @@ export default function App() {
       <Header />
       <Main />
     </>
-  )
+  );
 }
