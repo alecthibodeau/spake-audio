@@ -1,4 +1,12 @@
 :root {
+  /* Responsive Breakpoints */
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-xxl: 1400px;
+
+  /* Colors */
   --color-spake-green: #2e7e19;
   --color-spake-lichen: #f3f8f2;
   --color-spake-blue: #1874ff;
