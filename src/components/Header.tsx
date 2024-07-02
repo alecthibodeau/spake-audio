@@ -1,19 +1,3 @@
-// /* Constants */
-// import images from '../constants/images';
-
-// function Header(): JSX.Element {
-//   return (
-//     <header>
-//       <img
-//         className="spake-logo"
-//         src={images.header.spakeLogo}
-//         alt="Spake Audio logo" />
-//     </ header>
-//   );
-// }
-
-// export default Header;
-
 import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
@@ -87,25 +71,7 @@ function Header(props: { isBreakpointXs: boolean }): JSX.Element {
         : null}
       </div>
       <nav className={`mobile-nav-is-${isMobileNavOpen ? 'open' : 'closed'}`}>
-        <>
-          {/* <div className="nav-link-wrapper">
-            <NavLink
-              to="/foo"
-              className={({ isActive }) => `nav-link ${isActive ? 'nav-link-active' : ''}`}
-              onClick={closeMobileNav}>
-              foo
-            </NavLink>
-          </div>
-          <div className="nav-link-wrapper">
-            <NavLink
-              to="/bar"
-              className={({ isActive }) => `nav-link ${isActive ? 'nav-link-active' : ''}`}
-              onClick={closeMobileNav}>
-              bar
-            </NavLink>
-          </div> */}
-          {routes.map(renderNavLink)}
-        </>
+        {routes.map(renderNavLink)}
       </nav>
     </header>
   );
