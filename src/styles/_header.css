@@ -1,3 +1,180 @@
-img {
-  width: 150px;
+@import url('./_variables');
+
+header {
+  position: fixed;
+  width: 100%;
+  margin: auto;
+  z-index: 100;
+}
+
+.spake-logo-and-burger-button {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: .5rem 1.125rem;
+  background-color: var(--color-eighty-percent-gray);
+}
+
+.spake-logo-gray {
+  width: 220px;
+}
+
+.spake-logo-white {
+  width: 125px;
+}
+
+.burger-button {
+  position: relative;
+  cursor: pointer;
+  padding: 5px;
+  border: none;
+  background-color: transparent;
+
+  &.closing-x-button {
+    padding: 5px 2px;
+  }
+}
+
+.burger-button .burger-bars-container {
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.burger-button .burger-bars-container .bar {
+  position: relative;
+  width: 25px;
+  height: 4px;
+  background-color: white;
+  transition: transform .125s;
+
+  &.closing-x-bar {
+    width: 30px;
+
+    &:nth-child(1) {
+      top: 9px;
+      transform: rotate(45deg);
+    }
+
+    &:nth-child(2) {
+      display: none;
+    }
+
+    &:nth-child(3) {
+      bottom: 12px;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+nav {
+  flex-direction: column;
+  background-color: var(--color-dark-film);
+  backdrop-filter: blur(5px);
+
+  &.mobile-nav-is-closed {
+    display: none;
+  }
+
+  &.mobile-nav-is-open {
+    display: flex;
+  }
+
+  .nav-link-wrapper {
+    text-align: center;
+
+    &:nth-of-type(1) {
+      border-top: var(--border-width-small) solid green;
+      border-bottom: var(--border-width-small) solid yellow;
+    }
+
+    &:nth-of-type(2) {
+      border-bottom: var(--border-width-small) solid purple;
+    }
+  }
+
+  .nav-link,
+  form input.paypal-link {
+    display: block;
+    width: 100%;
+    padding: 1.5rem 0;
+    border: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: .25rem;
+    text-decoration: none;
+    text-transform: capitalize;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+.nav-menu-icons {
+  display: flex;
+  justify-content: center;
+  padding: .25rem;
+  border-bottom: var(--color-border-width-small) solid var(--color-fifty-percent-gray);
+
+  section {
+    margin: 1rem 2rem;
+
+    a img {
+      width: 2rem;
+      vertical-align: top;
+    }
+  }
+}
+
+/* Media Queries */
+
+@media (min-width: 576px) {
+
+  header {
+    position: relative;
+    padding-bottom: .75rem;
+    background-color: yellow;
+
+    .spake-logo-and-burger-button {
+      justify-content: center;
+      background-color: pink;
+    }
+  }
+
+  nav {
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 50rem;
+    margin: auto;
+    background-color: cyan;
+    backdrop-filter: initial;
+
+    &.mobile-nav-is-closed {
+      display: flex;
+    }
+
+    .nav-link-wrapper:nth-of-type(1),
+    .nav-link-wrapper:nth-of-type(2),
+    form {
+      border: none;
+    }
+
+    .nav-link,
+    form input.paypal-link {
+      padding: 0 0 .25rem;
+      border-bottom: var(--border-width-large) solid transparent;
+      transition: all 0.125s linear;
+      font-weight: 500;
+      color: var(--color-application-font);
+
+      &:hover,
+      &.nav-link-active {
+        padding: initial;
+        border-bottom: var(--border-width-large) solid var(--color-fifty-percent-gray);
+        margin-bottom: .25rem;
+      }
+    }
+  }
 }

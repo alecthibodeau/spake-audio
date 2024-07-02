@@ -1,8 +1,10 @@
 /* Header */
-import spakeLogo from '../assets/images/header/spake-logo.svg';
+import spakeLogoGreen from '../assets/images/header/spake-logo-green.svg';
+import spakeLogoWhite from '../assets/images/header/spake-logo-white.svg';
 
 const header: { [key: string]: string } = {
-  spakeLogo
+  spakeLogoGreen,
+  spakeLogoWhite
 };
 
 const images = {

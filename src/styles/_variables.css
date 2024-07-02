@@ -15,4 +15,18 @@
   --color-spake-yellow: #ffd600;
   --color-spake-brown: #531009;
   --color-spake-umber: #5a4c4c;
+
+  --color-fifty-percent-gray: #7f7f7f;
+  --color-eighty-percent-gray: #333;
+  --color-dark-film: rgb(30 30 30 / 0.9);
+
+  --color-application-font: var(--color-spake-umber);
+
+  /* Dimensions */
+  --dimension-image-xtra-small: 175px;
+  --dimension-image-small: 300px;
+
+  /* Border */
+  --border-width-small: 1px;
+  --border-width-large: 3px;
 }
