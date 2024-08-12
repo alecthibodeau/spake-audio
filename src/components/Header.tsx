@@ -55,7 +55,7 @@ function Header(props: { isBreakpointXs: boolean }): JSX.Element {
       <div className="spake-logo-and-burger-button">
         <Link to="/" onClick={closeMobileNav}>
           <img
-            className={`spake-logo-${props.isBreakpointXs ? 'white' : 'gray'}`}
+            className={`spake-logo-${props.isBreakpointXs ? 'light' : 'dark'}`}
             src={props.isBreakpointXs ? spakeLogoWhite : spakeLogoGreen}
             alt="Spake Audio logo" />
         </Link>
