@@ -3,7 +3,13 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 /* Components */
 import Header from './components/Header';
-import Main from './components/Main';
+import Section from './components/Section';
+
+/* Interfaces */
+import SectionProps from './interfaces/SectionProps';
+
+/* Constants */
+import stringValues from './constants/string-values';
 
 /* Styles */
 import './App.css';
@@ -11,6 +17,7 @@ import './App.css';
 export default function App() {
   const [isBreakpointXs, setIsBreakpointXs] = useState<boolean>(true);
   const [viewportWidth, setViewportWidth] = useState<number>(window.innerWidth);
+  const { sections, textWelcome } = stringValues;
 
   useEffect(() => {
     const breakpointSm: number = 576;
@@ -24,22 +31,24 @@ export default function App() {
     setViewportWidth(window.innerWidth);
   }
 
+  function renderRoute(props: SectionProps): JSX.Element {
+    const routePath = props.heading === textWelcome ? '/' : `/${props.heading}`;
+    return (
+      <Route
+        path={routePath}
+        element={
+          <Section heading={props.heading} description={props.description} />
+        }
+      />
+    );
+  }
+
   return (
-    // <>
-    //   <Header isBreakpointXs={isBreakpointXs} />
-    //   <Main />
-    // </>
     <BrowserRouter>
       <Header isBreakpointXs={isBreakpointXs} />
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/recording" element={<Main />} />
-          <Route path="/editing" element={<Main />} />
-          <Route path="/consulting" element={<Main />} />
-          <Route path="/about" element={<Main />} />
-          <Route path="/contact" element={<Main />} />
-          {/* <Route path="*" element={<NotFound />} /> */}
-        </Routes>
+      <main>
+        <Routes>{sections.map(renderRoute)}</Routes>
+      </main>
     </BrowserRouter>
   );
 }

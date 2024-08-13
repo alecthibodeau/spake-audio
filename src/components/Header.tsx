@@ -3,11 +3,11 @@ import { Link, NavLink } from 'react-router-dom';
 
 /* Constants */
 import images from '../constants/images';
+import stringValues from '../constants/string-values';
 
 function Header(props: { isBreakpointXs: boolean }): JSX.Element {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState<boolean>(false);
   const { spakeLogoGreen, spakeLogoWhite } = images.header;
-  const routes = ['recording', 'editing', 'consulting', 'about', 'contact'];
 
   useEffect(() => {
     const mainElement: HTMLElement | null = document.getElementById('main');
@@ -71,7 +71,7 @@ function Header(props: { isBreakpointXs: boolean }): JSX.Element {
         : null}
       </div>
       <nav className={`mobile-nav-is-${isMobileNavOpen ? 'open' : 'closed'}`}>
-        {routes.map(renderNavLink)}
+        {stringValues.routes.map(renderNavLink)}
       </nav>
     </header>
   );
