@@ -17,10 +17,12 @@ header {
 
 .spake-logo-dark {
   width: 220px;
+  fill: var(--color-application-font)
 }
 
 .spake-logo-light {
   width: 125px;
+  fill: var(--color-spake-lichen);
 }
 
 .burger-button {

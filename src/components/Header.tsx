@@ -2,12 +2,13 @@ import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 /* Constants */
-import images from '../constants/images';
+// import images from '../constants/images';
 import stringValues from '../constants/string-values';
+import svgPaths from '../constants/svg-paths';
 
 function Header(props: { isBreakpointXs: boolean }): JSX.Element {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState<boolean>(false);
-  const { spakeLogoGreen, spakeLogoWhite } = images.header;
+  // const { spakeLogoGreen, spakeLogoWhite } = images.header;
 
   useEffect(() => {
     const mainElement: HTMLElement | null = document.getElementById('main');
@@ -50,14 +51,27 @@ function Header(props: { isBreakpointXs: boolean }): JSX.Element {
     );
   }
 
+  function renderSVGPath(drawn: string, index: number): JSX.Element {
+    return (
+      <path
+        key={`pathDrawn${index}`}
+        d={drawn}
+        className={`spake-logo-${props.isBreakpointXs ? 'light' : 'dark'}`}
+      />
+    );
+  }
+
   return (
     <header>
       <div className="spake-logo-and-burger-button">
         <Link to="/" onClick={closeMobileNav}>
-          <img
+          {/* <img
             className={`spake-logo-${props.isBreakpointXs ? 'light' : 'dark'}`}
             src={props.isBreakpointXs ? spakeLogoWhite : spakeLogoGreen}
-            alt="Spake Audio logo" />
+            alt="Spake Audio logo" /> */}
+            <svg id="SpakeAudioLogo" xmlns="http://www.w3.org/2000/svg" width="200" height="50" viewBox="140 100 200 200">
+              {svgPaths.spakeLogoPaths.map(renderSVGPath)}
+            </svg>
         </Link>
         {props.isBreakpointXs ?
           <button
