@@ -7,7 +7,7 @@ import stringValues from '../constants/string-values';
 
 function Header(props: { isBreakpointXs: boolean }): JSX.Element {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState<boolean>(false);
-  const { spakeLogoGreen, spakeLogoWhite } = images.header;
+  const { spakeLogoGreen, spakeLogoLichen } = images.header;
 
   useEffect(() => {
     const mainElement: HTMLElement | null = document.getElementById('main');
@@ -56,7 +56,7 @@ function Header(props: { isBreakpointXs: boolean }): JSX.Element {
         <Link to="/" onClick={closeMobileNav}>
           <img
             className={`spake-logo-${props.isBreakpointXs ? 'light' : 'dark'}`}
-            src={props.isBreakpointXs ? spakeLogoWhite : spakeLogoGreen}
+            src={props.isBreakpointXs ? spakeLogoLichen : spakeLogoGreen}
             alt="Spake Audio logo" />
         </Link>
         {props.isBreakpointXs ?

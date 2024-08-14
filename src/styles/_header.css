@@ -24,7 +24,6 @@ header {
 }
 
 .burger-button {
-  position: relative;
   cursor: pointer;
   padding: 5px;
   border: none;
@@ -151,7 +150,7 @@ nav {
       &:hover,
       &.nav-link-active {
         padding: initial;
-        border-bottom: var(--border-width-large) solid var(--color-fifty-percent-gray);
+        border-bottom: var(--border-width-large) solid var(--color-application-font);
         margin-bottom: .25rem;
         background-color: initial;
       }
