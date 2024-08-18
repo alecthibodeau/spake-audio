@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 /* Components */
 import Header from './components/Header';
+import NotFound from './components/NotFound';
 import Section from './components/Section';
 
 /* Interfaces */
@@ -47,7 +48,10 @@ export default function App() {
     <BrowserRouter>
       <Header isBreakpointXs={isBreakpointXs} />
       <main>
-        <Routes>{sections.map(renderRoute)}</Routes>
+        <Routes>
+          {sections.map(renderRoute)}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </main>
     </BrowserRouter>
   );

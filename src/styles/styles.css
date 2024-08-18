@@ -28,6 +28,10 @@ main {
   line-height: 1.5rem;
 }
 
+.not-found-error {
+  text-align: center;
+}
+
 /* Media Queries */
 
 @media (min-width: 576px) {
