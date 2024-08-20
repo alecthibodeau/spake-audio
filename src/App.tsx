@@ -33,12 +33,18 @@ export default function App() {
   }
 
   function renderRoute(props: SectionProps): JSX.Element {
-    const routePath = props.heading === textWelcome ? '/' : `/${props.heading}`;
+    const routePath = `/${props.heading === textWelcome ? '' : props.heading}`;
+    const sectionId = `${props.heading}Section`;
     return (
       <Route
+        key={sectionId}
         path={routePath}
         element={
-          <Section heading={props.heading} description={props.description} />
+          <Section
+            id={sectionId}
+            heading={props.heading}
+            description={props.description}
+          />
         }
       />
     );
