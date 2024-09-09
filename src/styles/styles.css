@@ -1,5 +1,6 @@
 @import url('./_variables');
 @import url('./_header');
+@import url('./_section');
 
 html {
   scroll-behavior: smooth;
@@ -8,14 +9,8 @@ html {
 body {
   max-width: 87.5rem;
   margin: auto;
-  color: green;
-  /* background-color: var(--color-spake-lichen); */
-  background-color: blue;
-
-  & main {
-    color: var(--color-spake-lichen);
-    background-color: var(--color-spake-umber);
-  }
+  color: var(--color-application-font);
+  background-color: var(--color-spake-lichen);
 }
 
 main {
