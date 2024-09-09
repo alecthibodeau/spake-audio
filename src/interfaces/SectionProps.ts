@@ -1,5 +1,4 @@
 interface SectionProps {
-  id: string;
   heading: string;
   description: string;
 }
