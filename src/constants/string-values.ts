@@ -42,7 +42,8 @@ const stringValues = {
   sections,
   textModal,
   textWelcome,
-  textAbout
+  textAbout,
+  textContact
 };
 
 export default stringValues;
