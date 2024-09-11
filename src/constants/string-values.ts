@@ -29,7 +29,7 @@ const sections: SectionProps[] = [
   },
   {
     heading: textAbout,
-    description: 'Spake Audio is operated by musician and recording engineer Joel Thibodeau. We\'ve produced many projects over the years. Here are some of our favorites.'
+    description: 'Spake Audio is operated by musician and recording engineer Joel Thibodeau. We\'ve produced many projects over the years. Below are some of our favorites.'
   },
   {
     heading: textContact,
@@ -41,7 +41,8 @@ const stringValues = {
   routes,
   sections,
   textModal,
-  textWelcome
+  textWelcome,
+  textAbout
 };
 
 export default stringValues;
