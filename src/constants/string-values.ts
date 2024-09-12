@@ -7,8 +7,9 @@ const textEditing: string = 'editing';
 const textConsulting: string = 'consulting';
 const textAbout: string = 'about';
 const textContact: string = 'contact';
+const textContactSpakeAudio: string = 'Contact Spake Audio';
 const textModal: string = 'Thanks! Someone from Spake Audio will get back to you soon.';
-const routes = [textRecording, textEditing, textConsulting, textAbout, textContact];
+const headerNavRoutes = [textRecording, textEditing, textConsulting, textAbout];
 
 const sections: SectionProps[] = [
   {
@@ -38,12 +39,13 @@ const sections: SectionProps[] = [
 ];
 
 const stringValues = {
-  routes,
+  headerNavRoutes,
   sections,
   textModal,
   textWelcome,
   textAbout,
-  textContact
+  textContact,
+  textContactSpakeAudio
 };
 
 export default stringValues;

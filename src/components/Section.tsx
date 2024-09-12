@@ -15,6 +15,18 @@ function Section(props: SectionProps): JSX.Element {
     );
   }
 
+  function renderContactTextLink(): JSX.Element {
+    return (
+      <span>
+        &nbsp;
+        <NavLink
+          to={`/${stringValues.textContact}`}>
+          {stringValues.textContactSpakeAudio}
+        </NavLink>.
+      </span>
+    );
+  }
+
   return (
     <section>
       <div className="image-placeholder"></div>
@@ -24,22 +36,15 @@ function Section(props: SectionProps): JSX.Element {
       <div>
         <span>{props.description}</span>
         {
-          props.heading === stringValues.textWelcome ||
           props.heading === stringValues.textAbout ?
-          <span>
-            &nbsp;
-            <NavLink
-              to={`/${stringValues.textContact}`}>
-              Contact the studio
-            </NavLink>.
-          </span> :
+          renderContactTextLink() :
           null
         }
       </div>
       {
         props.heading === stringValues.textAbout ?
         <div>{thumbnails.map(renderThumbnail)}</div> :
-        null
+        <button>{stringValues.textContactSpakeAudio}</button>
       }
     </section>
   );

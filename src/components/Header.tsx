@@ -71,7 +71,7 @@ function Header(props: { isBreakpointXs: boolean }): JSX.Element {
         : null}
       </div>
       <nav className={`mobile-nav-is-${isMobileNavOpen ? 'open' : 'closed'}`}>
-        {stringValues.routes.map(renderNavLink)}
+        {stringValues.headerNavRoutes.map(renderNavLink)}
       </nav>
     </header>
   );
