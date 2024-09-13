@@ -1,15 +1,45 @@
+
 .image-placeholder {
   width: 100%;
   height: 100px;
   background-color: var(--color-fifty-percent-gray);
 }
 
-h1 {
-  text-align: center;
+.section-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .thumbnail-image {
   width: 100px;
   height: 100px;
   background-color: var(--color-fifty-percent-gray);
+}
+
+.section-large-nav-link-wrapper {
+  margin-top: 2rem;
+}
+
+.section-text-link {
+  &:visited {
+    color: inherit;
+  }
+}
+
+.section-large-nav-link {
+  padding: 1rem 2rem;
+  border: 1px solid var(--color-application-font);
+  border-radius: var(--border-radius-medium);
+  background-color: transparent;
+  color: var(--color-application-font);
+  font-family: inherit;
+  font-size: inherit;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-application-font);
+    color: var(--color-spake-lichen);
+  }
 }

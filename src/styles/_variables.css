@@ -26,7 +26,10 @@
   --dimension-image-xtra-small: 175px;
   --dimension-image-small: 300px;
 
-  /* Border */
+  /* Border Width */
   --border-width-small: 1px;
-  --border-width-large: 3px;
+  --border-width-large: 2px;
+
+  /* Border Radius */
+  --border-radius-medium: .5rem;
 }
