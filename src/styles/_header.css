@@ -4,6 +4,7 @@ header {
   position: fixed;
   width: 100%;
   margin: auto;
+  background-color: var(--color-eighty-percent-gray);
   z-index: 100;
 }
 
@@ -12,7 +13,6 @@ header {
   justify-content: space-between;
   flex-direction: row;
   padding: .5rem 1.125rem;
-  background-color: var(--color-eighty-percent-gray);
 }
 
 .spake-logo-dark {
@@ -70,7 +70,6 @@ header {
 nav {
   flex-direction: column;
   padding: .5rem 0;
-  background-color: var(--color-dark-film);
   backdrop-filter: blur(5px);
 
   &.mobile-nav-is-closed {
@@ -113,22 +112,20 @@ nav {
 
   header {
     position: relative;
-    padding-bottom: .75rem;
-    background-color: yellow;
+    background-color: var(--color-spake-lichen);
+  }
 
-    .spake-logo-and-burger-button {
-      justify-content: center;
-      background-color: pink;
-    }
+  .spake-logo-and-burger-button {
+    justify-content: center;
+    border-bottom: .25rem dotted var(--color-application-font);
   }
 
   nav {
     flex-direction: row;
     justify-content: space-around;
     max-width: 50rem;
-    padding: 0;
+    padding: .5rem 0;
     margin: auto;
-    background-color: cyan;
     backdrop-filter: initial;
 
     &.mobile-nav-is-closed {
