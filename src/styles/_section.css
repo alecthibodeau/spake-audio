@@ -1,4 +1,7 @@
 section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
 }
 
@@ -12,6 +15,11 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 3rem;
+}
+
+.section-thumbnails {
+  margin-top: 2rem;
 }
 
 .thumbnail-image {

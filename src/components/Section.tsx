@@ -45,7 +45,9 @@ function Section(props: SectionProps): JSX.Element {
         </div>
         {
           props.heading === textAbout ?
-          <div>{thumbnails.map(renderThumbnail)}</div> :
+          <div className="section-thumbnails">
+            {thumbnails.map(renderThumbnail)}
+          </div> :
           null
         }
         {
