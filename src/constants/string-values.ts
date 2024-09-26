@@ -4,12 +4,13 @@ import SectionProps from '../interfaces/SectionProps';
 const textWelcome: string = 'welcome';
 const textRecording: string = 'recording';
 const textEditing: string = 'editing';
+const textFAQ: string = 'faq';
 const textConsulting: string = 'consulting';
 const textAbout: string = 'about';
 const textContact: string = 'contact';
 const textContactSpakeAudio: string = 'Contact Spake Audio';
 const textModal: string = 'Thanks! Someone from Spake Audio will get back to you soon.';
-const headerNavRoutes = [textRecording, textEditing, textConsulting, textAbout];
+const headerNavRoutes = [textRecording, textEditing, textConsulting, textAbout, textFAQ];
 
 const sections: SectionProps[] = [
   {
@@ -33,6 +34,10 @@ const sections: SectionProps[] = [
     description: 'Spake Audio is operated by musician and recording engineer Joel Thibodeau. We\'ve produced many projects over the years. Below are some of our favorites.'
   },
   {
+    heading: textFAQ,
+    description: 'FAQ section content'
+  },
+  {
     heading: textContact,
     description: 'We\'re looking forward to hearing from you. Complete and submit the following form to get in touch with Spake Audio.'
   }
@@ -45,7 +50,8 @@ const stringValues = {
   textWelcome,
   textAbout,
   textContact,
-  textContactSpakeAudio
+  textContactSpakeAudio,
+  textFAQ
 };
 
 export default stringValues;

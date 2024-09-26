@@ -37,14 +37,14 @@ function Header(props: { isBreakpointXs: boolean }): JSX.Element {
     )
   }
 
-  function renderNavLink(link: string): JSX.Element {
+  function renderNavLink(linkText: string): JSX.Element {
     return (
-      <div className="nav-link-wrapper" key={`linkTo${link}`}>
+      <div className="nav-link-wrapper" key={`linkTo${linkText}`}>
         <NavLink
-          to={`/${link}`}
+          to={`/${linkText}`}
           className={({ isActive }) => `nav-link ${isActive ? 'nav-link-active' : ''}`}
           onClick={closeMobileNav}>
-          {link}
+          {linkText === stringValues.textFAQ ? linkText.toUpperCase() : linkText}
         </NavLink>
       </div>
     );

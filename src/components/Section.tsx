@@ -7,8 +7,17 @@ import SectionProps from '../interfaces/SectionProps';
 import stringValues from '../constants/string-values'
 
 function Section(props: SectionProps): JSX.Element {
-  const { textAbout, textContact, textContactSpakeAudio } = stringValues;
+  const { textAbout, textContact, textFAQ, textContactSpakeAudio } = stringValues;
   const thumbnails: string[] = Array(10).fill('thumbnail-image');
+
+  function renderHeadingText(headingText: string): string {
+    if (headingText === textFAQ) {
+      headingText = headingText.toUpperCase();
+    } else {
+      headingText = headingText[0].toUpperCase() + headingText.slice(1);
+    }
+    return headingText;
+  }
 
   function renderThumbnail(thumbnailImage: string, index: number): JSX.Element {
     return (
@@ -31,7 +40,7 @@ function Section(props: SectionProps): JSX.Element {
       <div className="image-placeholder"></div>
       <div className="section-content">
         <h1>
-          {props.heading[0].toUpperCase() + props.heading.slice(1)}
+          {renderHeadingText(props.heading)}
         </h1>
         <div>
           <span>{props.description}</span>
