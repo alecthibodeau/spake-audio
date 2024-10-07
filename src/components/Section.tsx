@@ -7,16 +7,15 @@ import SectionProps from '../interfaces/SectionProps';
 import stringValues from '../constants/string-values'
 
 function Section(props: SectionProps): JSX.Element {
-  const { textAbout, textContact, textFAQ, textContactSpakeAudio } = stringValues;
+  const { textAbout, textContact, textFAQ, textContactSpakeAudio, textEmail, formInputs } = stringValues;
   const thumbnails: string[] = Array(10).fill('thumbnail-image');
 
-  function renderHeadingText(headingText: string): string {
-    if (headingText === textFAQ) {
-      headingText = headingText.toUpperCase();
-    } else {
-      headingText = headingText[0].toUpperCase() + headingText.slice(1);
-    }
-    return headingText;
+  function makeTitleCase(text: string): string {
+    return text[0].toUpperCase() + text.slice(1);
+  }
+
+  function renderHeadingText(heading: string): string {
+    return heading === textFAQ ? heading.toUpperCase() : makeTitleCase(heading);
   }
 
   function renderThumbnail(thumbnailImage: string, index: number): JSX.Element {
@@ -32,6 +31,27 @@ function Section(props: SectionProps): JSX.Element {
         className={isTextLink ? 'section-text-link' : 'section-large-nav-link'}>
         {textContactSpakeAudio}
       </NavLink>
+    );
+  }
+
+  function renderFormInput(inputName: string): JSX.Element {
+    const inputId: string = `formInput${inputName}`;
+    return (
+      <div key={`formInputWrapper${inputName}`} className="form-input-wrapper">
+        <label htmlFor={inputId} className="form-label">
+          {`${makeTitleCase(inputName)}*`}
+        </label>
+        <input
+          className="form-input"
+          maxLength={256}
+          name={inputName}
+          data-name={inputName}
+          placeholder=""
+          type={inputName === textEmail ? textEmail : 'text'}
+          id={inputId}
+          required
+        />
+      </div>
     );
   }
 
@@ -69,49 +89,7 @@ function Section(props: SectionProps): JSX.Element {
         {
           props.heading === textContact ?
           <form>
-            <label htmlFor="formInputName" className="form-label">Name*</label>
-            <input
-              className="form-input"
-              maxLength={256}
-              name="name"
-              data-name="Name"
-              placeholder=""
-              type="text"
-              id="formInputName"
-              required
-            />
-            <label
-              htmlFor="formInputEmail"
-              className="form-label"
-            >
-              Email*
-            </label>
-            <input
-              className="form-input"
-              maxLength={256}
-              name="email"
-              data-name="Email"
-              placeholder=""
-              type="text"
-              id="formInputEmail"
-              required
-            />
-            <label
-              htmlFor="formInputMessage"
-              className="form-label"
-            >
-              Message*
-            </label>
-            <input
-              className="form-input"
-              maxLength={256}
-              name="email"
-              data-name="Message"
-              placeholder=""
-              type="text"
-              id="formInputMessage"
-              required
-            />
+            {formInputs.map(renderFormInput)}
             <button type="submit" className="form-submit-button">Submit</button>
           </form> :
           null
