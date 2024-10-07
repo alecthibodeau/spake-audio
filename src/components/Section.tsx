@@ -66,6 +66,56 @@ function Section(props: SectionProps): JSX.Element {
           </div> :
           null
         }
+        {
+          props.heading === textContact ?
+          <form>
+            <label htmlFor="formInputName" className="form-label">Name*</label>
+            <input
+              className="form-input"
+              maxLength={256}
+              name="name"
+              data-name="Name"
+              placeholder=""
+              type="text"
+              id="formInputName"
+              required
+            />
+            <label
+              htmlFor="formInputEmail"
+              className="form-label"
+            >
+              Email*
+            </label>
+            <input
+              className="form-input"
+              maxLength={256}
+              name="email"
+              data-name="Email"
+              placeholder=""
+              type="text"
+              id="formInputEmail"
+              required
+            />
+            <label
+              htmlFor="formInputMessage"
+              className="form-label"
+            >
+              Message*
+            </label>
+            <input
+              className="form-input"
+              maxLength={256}
+              name="email"
+              data-name="Message"
+              placeholder=""
+              type="text"
+              id="formInputMessage"
+              required
+            />
+            <button type="submit" className="form-submit-button">Submit</button>
+          </form> :
+          null
+        }
       </div>
     </section>
   );
