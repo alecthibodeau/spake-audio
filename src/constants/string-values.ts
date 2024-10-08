@@ -11,11 +11,12 @@ const textContact: string = 'contact';
 const textContactSpakeAudio: string = 'Contact Spake Audio';
 const textName: string = 'name';
 const textEmail: string = 'email';
+const textPhone: string = 'phone';
 const textMessage: string = 'message';
 const textModal: string = 'Thanks! Someone from Spake Audio will get back to you soon.';
 const headerNavRoutes = [textRecording, textEditing, textConsulting, textAbout, textFAQ];
 
-const formInputs: string[] = [textName, textEmail, textMessage];
+const formInputs: string[] = [textName, textEmail, textPhone, textMessage];
 
 const sections: SectionProps[] = [
   {
@@ -58,6 +59,8 @@ const stringValues = {
   textContactSpakeAudio,
   textName,
   textEmail,
+  textPhone,
+  textMessage,
   textFAQ,
   formInputs
 };

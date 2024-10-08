@@ -33,25 +33,31 @@ section {
 }
 
 .section-text-link {
+
   &:visited {
     color: inherit;
   }
+
+  &:hover {
+    text-decoration-color: var(--color-spake-yellow);
+  }
 }
 
-.section-large-nav-link {
+.section-large-nav-link,
+.form-submit-button {
   padding: 1rem 2rem;
   border: 1px solid var(--color-application-font);
   border-radius: var(--border-radius-medium);
-  background-color: transparent;
-  color: var(--color-application-font);
+  background-color: var(--color-application-font);
+  color: var(--color-spake-lichen);
   font-family: inherit;
   font-size: inherit;
   text-decoration: none;
   cursor: pointer;
 
   &:hover {
-    background-color: var(--color-application-font);
-    color: var(--color-spake-lichen);
+    background-color: var(--color-spake-yellow);
+    color: var(--color-spake-brown);
   }
 }
 
@@ -59,6 +65,7 @@ form {
   display: flex;
   flex-direction: column;
   width: 100%;
+  max-width: 25rem;
   margin-top: 2rem;
 }
 
@@ -66,4 +73,18 @@ form {
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
+}
+
+.form-input {
+  padding: .5rem;
+
+  &.form-input-message {
+    height: 5rem;
+  }
+}
+
+.form-submit-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
 }
