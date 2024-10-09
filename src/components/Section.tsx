@@ -53,7 +53,7 @@ function Section(props: SectionProps): JSX.Element {
       >
         <label htmlFor={inputId} className="form-label">
           <span>{makeTitleCase(inputName)}</span>
-          {inputName === textPhone ? null : <span>*</span>}
+          {inputName === textPhone ? null : <span className="required-star">*</span>}
         </label>
         {
           inputName === textMessage ?
@@ -61,6 +61,7 @@ function Section(props: SectionProps): JSX.Element {
             id={inputId}
             className={`form-input form-input-${inputName}`}
             name={inputName}
+            rows={5}
             required
           /> :
           <input
@@ -68,6 +69,7 @@ function Section(props: SectionProps): JSX.Element {
             className={`form-input form-input-${inputName}`}
             name={inputName}
             type={inputName === textEmail ? textEmail : 'text'}
+            maxLength={256}
             required={isRequired}
           />
         }

@@ -66,7 +66,7 @@ form {
   flex-direction: column;
   width: 100%;
   max-width: 25rem;
-  margin-top: 2rem;
+  margin: 2rem auto;
 }
 
 .form-input-wrapper {
@@ -77,10 +77,10 @@ form {
 
 .form-input {
   padding: .5rem;
+}
 
-  &.form-input-message {
-    height: 5rem;
-  }
+.required-star {
+  color: var(--color-spake-red);
 }
 
 .form-submit-button-wrapper {
