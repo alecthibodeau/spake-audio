@@ -4,8 +4,8 @@ header {
   position: fixed;
   width: 100%;
   margin: auto;
-  background-color: var(--color-eighty-percent-gray);
   z-index: 100;
+  background-color: var(--color-eighty-percent-gray);
 }
 
 .spake-logo-and-burger-button {

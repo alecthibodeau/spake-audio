@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 /* Components */
+import Footer from './components/Footer';
 import Header from './components/Header';
 import NotFound from './components/NotFound';
 import Section from './components/Section';
@@ -57,6 +58,7 @@ export default function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
+      <Footer />
     </BrowserRouter>
   );
 }

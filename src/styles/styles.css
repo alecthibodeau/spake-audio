@@ -1,6 +1,7 @@
 @import url('./_variables');
 @import url('./_header');
 @import url('./_section');
+@import url('./_footer');
 
 html {
   scroll-behavior: smooth;
@@ -11,6 +12,7 @@ body {
   margin: auto;
   color: var(--color-application-font);
   background-color: var(--color-spake-lichen);
+  font-family: 'Open Sans', sans-serif;
 }
 
 main {
@@ -19,7 +21,6 @@ main {
   display: flex;
   justify-content: center;
   padding: .5rem auto;
-  font-family: 'Open Sans', sans-serif;
   line-height: 1.5rem;
 }
 
