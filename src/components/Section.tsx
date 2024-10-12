@@ -103,9 +103,7 @@ function Section(props: SectionProps): JSX.Element {
         }
         {
           props.heading !== textAbout && props.heading !== textContact ?
-          <div className="section-large-nav-link-wrapper">
-            {renderContactLink(false)}
-          </div> :
+          renderContactLink(false):
           null
         }
         {

@@ -1,7 +1,18 @@
 footer {
+  position: relative;
+  top: 60px;
   display: flex;
   justify-content: center;
   width: 100%;
-  padding-top: 5rem;
+  padding-bottom: 2rem;
   font-size: .75rem;
+}
+
+/* Media Queries */
+
+@media (min-width: 576px) {
+
+  footer {
+    top: initial;
+  }
 }
