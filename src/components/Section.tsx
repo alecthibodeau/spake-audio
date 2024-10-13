@@ -5,6 +5,10 @@ import SectionProps from '../interfaces/SectionProps';
 
 /* Constants */
 import stringValues from '../constants/string-values'
+import FormInput from './FormInput';
+
+/* Helpers */
+import formatText from '../helpers/format-text';
 
 function Section(props: SectionProps): JSX.Element {
   const {
@@ -12,19 +16,17 @@ function Section(props: SectionProps): JSX.Element {
     textContact,
     textFAQ,
     textContactSpakeAudio,
-    textEmail,
-    textPhone,
-    textMessage,
     formInputs
   } = stringValues;
-  const thumbnails: string[] = Array(10).fill('thumbnail-image');
+  const { makeTitleCase } = formatText;
 
-  function makeTitleCase(text: string): string {
-    return text[0].toUpperCase() + text.slice(1);
-  }
+  const thumbnails: string[] = Array(10).fill('thumbnail-image');
+  const isAbout: boolean = props.heading === textAbout;
+  const isContact: boolean = props.heading === textContact;
+  const isFAQ: boolean = props.heading === textFAQ;
 
   function renderHeadingText(heading: string): string {
-    return heading === textFAQ ? heading.toUpperCase() : makeTitleCase(heading);
+    return isFAQ ? heading.toUpperCase() : makeTitleCase(heading);
   }
 
   function renderThumbnail(thumbnailImage: string, index: number): JSX.Element {
@@ -43,38 +45,8 @@ function Section(props: SectionProps): JSX.Element {
     );
   }
 
-  function renderFormInput(inputName: string): JSX.Element {
-    const inputId: string = `formInput${makeTitleCase(inputName)}`;
-    const isRequired: boolean = inputName !== textPhone;
-    return (
-      <div
-        key={`formInputWrapper${makeTitleCase(inputName)}`}
-        className="form-input-wrapper"
-      >
-        <label htmlFor={inputId} className="form-label">
-          <span>{makeTitleCase(inputName)}</span>
-          {inputName === textPhone ? null : <span className="required-star">*</span>}
-        </label>
-        {
-          inputName === textMessage ?
-          <textarea
-            id={inputId}
-            className={`form-input form-input-${inputName}`}
-            name={inputName}
-            rows={5}
-            required
-          /> :
-          <input
-            id={inputId}
-            className={`form-input form-input-${inputName}`}
-            name={inputName}
-            type={inputName === textEmail ? textEmail : 'text'}
-            maxLength={256}
-            required={isRequired}
-          />
-        }
-      </div>
-    );
+  function renderFormInput(formInputName: string): JSX.Element {
+    return <FormInput inputName={formInputName} />;
   }
 
   return (
@@ -87,7 +59,7 @@ function Section(props: SectionProps): JSX.Element {
         <div>
           <span>{props.description}</span>
           {
-            props.heading === textAbout ?
+            isAbout ?
             <span>
               <span>&nbsp;</span>{renderContactLink(true)}<span>.</span>
             </span> :
@@ -95,19 +67,15 @@ function Section(props: SectionProps): JSX.Element {
           }
         </div>
         {
-          props.heading === textAbout ?
+          isAbout ?
           <div className="section-thumbnails">
             {thumbnails.map(renderThumbnail)}
           </div> :
           null
         }
+        {!isAbout && !isContact ? renderContactLink(false) : null}
         {
-          props.heading !== textAbout && props.heading !== textContact ?
-          renderContactLink(false):
-          null
-        }
-        {
-          props.heading === textContact ?
+          isContact ?
           <form>
             {formInputs.map(renderFormInput)}
             <div className="form-submit-button-wrapper">
