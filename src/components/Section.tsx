@@ -35,6 +35,14 @@ function Section(props: SectionProps): JSX.Element {
     );
   }
 
+  function renderSectionThumbnails(): JSX.Element {
+    return (
+      <div className="section-thumbnails">
+        {thumbnails.map(renderThumbnail)}
+      </div>
+    );
+  }
+
   function renderContactLink(isTextLink: boolean): JSX.Element {
     return (
       <NavLink
@@ -45,8 +53,29 @@ function Section(props: SectionProps): JSX.Element {
     );
   }
 
+  function renderInlineContactLink(): JSX.Element {
+    return (
+      <span>
+        <span>&nbsp;</span>{renderContactLink(true)}<span>.</span>
+      </span>
+    );
+  }
+
   function renderFormInput(formInputName: string): JSX.Element {
-    return <FormInput inputName={formInputName} />;
+    return <FormInput key={formInputName} inputName={formInputName} />;
+  }
+
+  function renderForm(): JSX.Element {
+    return (
+      <form>
+        {formInputs.map(renderFormInput)}
+        <div className="form-submit-button-wrapper">
+          <button type="submit" className="form-submit-button">
+            Submit
+          </button>
+        </div>
+      </form>
+    );
   }
 
   return (
@@ -58,34 +87,11 @@ function Section(props: SectionProps): JSX.Element {
         </h1>
         <div>
           <span>{props.description}</span>
-          {
-            isAbout ?
-            <span>
-              <span>&nbsp;</span>{renderContactLink(true)}<span>.</span>
-            </span> :
-            null
-          }
+          {isAbout ? renderInlineContactLink() : null}
         </div>
-        {
-          isAbout ?
-          <div className="section-thumbnails">
-            {thumbnails.map(renderThumbnail)}
-          </div> :
-          null
-        }
+        {isAbout ? renderSectionThumbnails() : null}
         {!isAbout && !isContact ? renderContactLink(false) : null}
-        {
-          isContact ?
-          <form>
-            {formInputs.map(renderFormInput)}
-            <div className="form-submit-button-wrapper">
-              <button type="submit" className="form-submit-button">
-                Submit
-              </button>
-            </div>
-          </form> :
-          null
-        }
+        {isContact ? renderForm() : null}
       </div>
     </section>
   );
