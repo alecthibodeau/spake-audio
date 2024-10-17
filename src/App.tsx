@@ -52,7 +52,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Header isBreakpointXs={isBreakpointXs} />
-      <main>
+      <main id="main">
         <Routes>
           {sections.map(renderRoute)}
           <Route path="*" element={<NotFound />} />
