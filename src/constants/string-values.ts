@@ -16,6 +16,16 @@ const textMessage: string = 'message';
 const textModal: string = 'Thanks! Someone from Spake Audio will get back to you soon.';
 const headerNavRoutes = [textRecording, textEditing, textConsulting, textAbout, textFAQ];
 
+const companies: string[] = [
+  'New York Times',
+  'Penguin Random House',
+  'HarperCollins Publishers',
+  'John Marshall Media',
+  'Dreamscape Media',
+  'Blackstone Publishing',
+  'Berklee Online'
+];
+
 const formInputs: string[] = [textName, textEmail, textPhone, textMessage];
 
 const sections: SectionProps[] = [
@@ -50,6 +60,7 @@ const sections: SectionProps[] = [
 ];
 
 const stringValues = {
+  companies,
   headerNavRoutes,
   sections,
   textModal,

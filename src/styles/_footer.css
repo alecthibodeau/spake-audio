@@ -10,8 +10,10 @@ footer {
   font-size: .75rem;
 }
 
-.scroller {
-  max-width: 600px;
+.scroller-outer {
+  width: 86vw;
+  max-width: 1000px;
+  padding-inline: 1rem;
 }
 
 .scroller-inner {
@@ -27,7 +29,7 @@ footer {
   background-color: var(--color-spake-pink);
 }
 
-.scroller[data-animated='true'] {
+.scroller-outer[data-animated='true'] {
   overflow: hidden;
   -webkit-mask: linear-gradient(
     90deg,
@@ -45,10 +47,14 @@ footer {
   );
 }
 
-.scroller[data-animated='true'] .scroller-inner {
+.scroller-outer[data-animated='true'] .scroller-inner {
   flex-wrap: nowrap;
   width: max-content;
   animation: side-scroll 20s linear infinite;
+
+  &:hover {
+    animation-play-state: paused;
+  }
 }
 
 @keyframes side-scroll {
