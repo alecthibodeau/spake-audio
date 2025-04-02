@@ -1,4 +1,5 @@
 /* Interfaces */
+import Company from '../interfaces/Company';
 import SectionProps from '../interfaces/SectionProps';
 
 const textWelcome: string = 'welcome';
@@ -16,14 +17,35 @@ const textMessage: string = 'message';
 const textModal: string = 'Thanks! Someone from Spake Audio will get back to you soon.';
 const headerNavRoutes = [textRecording, textEditing, textConsulting, textAbout, textFAQ];
 
-const companies: string[] = [
-  'New York Times',
-  'Penguin Random House',
-  'HarperCollins Publishers',
-  'John Marshall Media',
-  'Dreamscape Media',
-  'Blackstone Publishing',
-  'Berklee Online'
+const companies: Company[] = [
+  {
+    name: 'New York Times',
+    logo: 'foo'
+  },
+  {
+    name: 'Penguin Random House',
+    logo: 'foo'
+  },
+  {
+    name: 'HarperCollins Publishers',
+    logo: 'foo'
+  },
+  {
+    name: 'John Marshall Media',
+    logo: 'foo'
+  },
+  {
+    name: 'Dreamscape Media',
+    logo: 'foo'
+  },
+  {
+    name: 'Blackstone Publishing',
+    logo: 'foo'
+  },
+  {
+    name: 'Berklee Online',
+    logo: 'foo'
+  }
 ];
 
 const formInputs: string[] = [textName, textEmail, textPhone, textMessage];

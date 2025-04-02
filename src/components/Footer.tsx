@@ -1,5 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 
+/* Interfaces */
+import Company from '../interfaces/Company';
+
 /* Constants */
 import stringValues from '../constants/string-values';
 
@@ -11,23 +14,19 @@ function Footer(): JSX.Element {
   const { companies } = stringValues;
   const { formatLettersAndNumbers } = formatText;
   const isMotionReduced: boolean = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hiddenCompanies = companies.map(company => ({...company, isHidden: true}));
 
   useEffect(() => {
     if (!isMotionReduced) scrollerRef.current?.setAttribute('data-animated', 'true');
   }, [isMotionReduced]);
 
-  function renderScrollItem(name: string, index: number): React.JSX.Element {
+  function renderScrollItem(company: Company, index: number): React.JSX.Element {
     return (
-      <div key={`${index}${formatLettersAndNumbers(name)}`}>
-        {name}
-      </div>
-    );
-  }
-
-  function renderHiddenScrollItem(name: string, index: number): React.JSX.Element {
-    return (
-      <div key={`${index}Hidden${formatLettersAndNumbers(name)}`} aria-hidden="true">
-        {name}
+      <div
+        key={`${index}${formatLettersAndNumbers(company.name)}`}
+        {...(company.isHidden ? { 'aria-hidden': true } : {})}
+      >
+        {company.name}
       </div>
     );
   }
@@ -37,7 +36,7 @@ function Footer(): JSX.Element {
       <div className="scroller-outer" ref={scrollerRef}>
         <div className="scroller-inner">
           {companies.map(renderScrollItem)}
-          {!isMotionReduced ? companies.map(renderHiddenScrollItem) : null}
+          {!isMotionReduced ? hiddenCompanies.map(renderScrollItem) : null}
         </div>
       </div>
       <div className="footer-copyright">
