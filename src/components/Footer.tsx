@@ -25,8 +25,14 @@ function Footer(): JSX.Element {
       <div
         key={`${index}${formatLettersAndNumbers(company.name)}`}
         {...(company.isHidden ? { 'aria-hidden': true } : {})}
+        className="scroll-item"
       >
-        {company.name}
+        <img
+          src={company.logo}
+          alt={`${company.name} logo`}
+          title={company.name}
+          className="scroll-item-logo"
+        />
       </div>
     );
   }

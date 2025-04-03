@@ -101,7 +101,7 @@ nav {
 
     &:hover {
       background-color: var(--color-spake-lichen);
-      color: var(--color-spake-umber);
+      color: var(--color-spake-brown);
     }
   }
 }

@@ -19,14 +19,17 @@ footer {
 .scroller-inner {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: var(--gap-scroll-items);
   padding-block: 1rem;
 }
 
-.scroller-inner > div {
+.scroll-item {
   white-space: nowrap;
   padding: 1rem;
-  background-color: var(--color-spake-pink);
+}
+
+.scroll-item-logo {
+  height: 2.5rem;
 }
 
 .scroller-outer[data-animated='true'] {
@@ -34,15 +37,15 @@ footer {
   -webkit-mask: linear-gradient(
     90deg,
     transparent,
-    var(--color-spake-lichen) 20%,
-    var(--color-spake-lichen) 80%,
+    var(--color-spake-lichen) 10%,
+    var(--color-spake-lichen) 90%,
     transparent
   );
   mask: linear-gradient(
     90deg,
     transparent,
-    var(--color-spake-lichen) 20%,
-    var(--color-spake-lichen) 80%,
+    var(--color-spake-lichen) 10%,
+    var(--color-spake-lichen) 90%,
     transparent
   );
 }
@@ -50,7 +53,7 @@ footer {
 .scroller-outer[data-animated='true'] .scroller-inner {
   flex-wrap: nowrap;
   width: max-content;
-  animation: side-scroll 20s linear infinite;
+  animation: side-scroll 40s linear infinite;
 
   &:hover {
     animation-play-state: paused;
@@ -59,8 +62,12 @@ footer {
 
 @keyframes side-scroll {
   to {
-    transform: translate(calc(-50% - 0.5rem));
+    transform: translate(calc(-50% - (var(--half-gap-scroll-items))));
   }
+}
+
+.footer-copyright {
+  margin: 1rem 1rem 5rem;
 }
 
 /* Media Queries */

@@ -2,6 +2,11 @@
 import Company from '../interfaces/Company';
 import SectionProps from '../interfaces/SectionProps';
 
+/* Images */
+import images from './images';
+
+const { logos } = images;
+
 const textWelcome: string = 'welcome';
 const textRecording: string = 'recording';
 const textEditing: string = 'editing';
@@ -19,32 +24,32 @@ const headerNavRoutes = [textRecording, textEditing, textConsulting, textAbout, 
 
 const companies: Company[] = [
   {
-    name: 'New York Times',
-    logo: 'foo'
+    name: 'The New York Times',
+    logo: logos.newYorkTimes
   },
   {
     name: 'Penguin Random House',
-    logo: 'foo'
+    logo: logos.penguinRandomHouse
   },
   {
     name: 'HarperCollins Publishers',
-    logo: 'foo'
+    logo: logos.harpercollinsPublishers
   },
   {
     name: 'John Marshall Media',
-    logo: 'foo'
+    logo: logos.johnMarshallMedia
   },
   {
     name: 'Dreamscape Media',
-    logo: 'foo'
+    logo: logos.dreamscapeMedia
   },
   {
     name: 'Blackstone Publishing',
-    logo: 'foo'
+    logo: logos.blackstonePublishing
   },
   {
     name: 'Berklee Online',
-    logo: 'foo'
+    logo: logos.berkleeOnline
   }
 ];
 

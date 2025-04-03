@@ -21,11 +21,13 @@
   --color-eighty-percent-gray: #333;
   --color-dark-film: rgb(30 30 30 / 0.9);
 
-  --color-application-font: var(--color-spake-umber);
+  --color-application-font: var(--color-spake-brown);
 
   /* Dimensions */
   --dimension-image-xtra-small: 175px;
   --dimension-image-small: 300px;
+  --gap-scroll-items: 2.5rem;
+  --half-gap-scroll-items: calc(var(--gap-scroll-items) / 2);
 
   /* Border Width */
   --border-width-small: 1px;
