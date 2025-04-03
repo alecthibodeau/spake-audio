@@ -35,4 +35,5 @@
 
   /* Border Radius */
   --border-radius-medium: .5rem;
+  --border-radius-large: 2rem;
 }
