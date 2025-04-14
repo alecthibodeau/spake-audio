@@ -1,11 +1,11 @@
 import { NavLink } from 'react-router-dom';
 
 /* Interfaces */
+import Contact from './Contact';
 import SectionProps from '../interfaces/SectionProps';
 
 /* Constants */
 import stringValues from '../constants/string-values'
-import FormInput from './FormInput';
 
 /* Helpers */
 import formatText from '../helpers/format-text';
@@ -15,8 +15,7 @@ function Section(props: SectionProps): JSX.Element {
     textAbout,
     textContact,
     textFAQ,
-    textContactSpakeAudio,
-    formInputs
+    textContactSpakeAudio
   } = stringValues;
   const { makeTitleCase } = formatText;
 
@@ -61,23 +60,6 @@ function Section(props: SectionProps): JSX.Element {
     );
   }
 
-  function renderFormInput(formInputName: string): JSX.Element {
-    return <FormInput key={formInputName} inputName={formInputName} />;
-  }
-
-  function renderForm(): JSX.Element {
-    return (
-      <form>
-        {formInputs.map(renderFormInput)}
-        <div className="form-submit-button-wrapper">
-          <button type="submit" className="form-submit-button">
-            Submit
-          </button>
-        </div>
-      </form>
-    );
-  }
-
   return (
     <section>
       <div className="image-placeholder"></div>
@@ -91,7 +73,7 @@ function Section(props: SectionProps): JSX.Element {
         </div>
         {isAbout ? renderSectionThumbnails() : null}
         {!isAbout && !isContact ? renderContactLink(false) : null}
-        {isContact ? renderForm() : null}
+        {isContact ? <Contact /> : null}
       </div>
     </section>
   );
