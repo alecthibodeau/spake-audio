@@ -5,6 +5,9 @@ import { Link, NavLink } from 'react-router-dom';
 import images from '../constants/images';
 import stringValues from '../constants/string-values';
 
+/* Styles */
+import '../styles/header.css';
+
 function Header(props: { isBreakpointXs: boolean }): JSX.Element {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState<boolean>(false);
   const { spakeLogoGreen, spakeLogoLichen } = images.header;

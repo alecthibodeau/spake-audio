@@ -15,6 +15,9 @@ import stringValues from '../constants/string-values'
 /* Helpers */
 import formatText from '../helpers/format-text';
 
+/* Styles */
+import '../styles/section.css';
+
 function Section(props: SectionProps): JSX.Element {
   const {
     textAbout,

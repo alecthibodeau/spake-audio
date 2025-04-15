@@ -1,7 +1,4 @@
 @import url('./_variables');
-@import url('./_header');
-@import url('./_section');
-@import url('./_footer');
 
 html {
   scroll-behavior: smooth;

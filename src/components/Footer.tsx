@@ -9,6 +9,9 @@ import stringValues from '../constants/string-values';
 /* Helpers */
 import formatText from '../helpers/format-text';
 
+/* Styles */
+import '../styles/footer.css';
+
 function Footer(): JSX.Element {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const { companies } = stringValues;
