@@ -14,8 +14,12 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 3rem;
+  padding-bottom: 1rem;
   margin: auto 3rem;
+}
+
+.section-description {
+  margin-bottom: 1rem;
 }
 
 .section-thumbnails {
@@ -38,25 +42,6 @@ section {
   }
 
   &:hover {
-    text-decoration-color: var(--color-spake-yellow);
-  }
-}
-
-.section-large-nav-link,
-button[type='submit'] {
-  padding: 1rem 2rem;
-  border: 2px solid var(--color-application-font);
-  border-radius: var(--border-radius-large);
-  margin-top: 2rem;
-  white-space: nowrap;
-  background-color: var(--color-application-font);
-  color: var(--color-spake-lichen);
-  font-size: inherit;
-  text-decoration: none;
-  cursor: pointer;
-
-  &:hover {
-    background-color: var(--color-spake-yellow);
-    color: var(--color-spake-brown);
+    text-decoration-color: var(--color-spake-blue);
   }
 }

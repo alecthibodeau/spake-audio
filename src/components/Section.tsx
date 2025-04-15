@@ -61,7 +61,7 @@ function Section(props: SectionProps): JSX.Element {
     return (
       <NavLink
         to={`/${textContact}`}
-        className={isTextLink ? 'section-text-link' : 'section-large-nav-link'}>
+        className={isTextLink ? 'section-text-link' : 'large-nav-link'}>
         {textContactSpakeAudio}
       </NavLink>
     );
@@ -91,7 +91,7 @@ function Section(props: SectionProps): JSX.Element {
         <h1>
           {renderHeadingText(props.heading)}
         </h1>
-        <div>
+        <div className="section-description">
           <span>{props.description}</span>
           {isAbout ? renderInlineContactLink() : null}
         </div>

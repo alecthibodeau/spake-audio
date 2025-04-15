@@ -11,6 +11,7 @@ import '../styles/header.css';
 function Header(props: { isBreakpointXs: boolean }): JSX.Element {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState<boolean>(false);
   const { spakeLogoGreen, spakeLogoLichen } = images.header;
+  const { textContact, textContactSpakeAudio } = stringValues;
 
   useEffect(() => {
     const mainElement: HTMLElement | null = document.getElementById('main');
@@ -75,6 +76,11 @@ function Header(props: { isBreakpointXs: boolean }): JSX.Element {
       </div>
       <nav className={`mobile-nav-is-${isMobileNavOpen ? 'open' : 'closed'}`}>
         {stringValues.headerNavRoutes.map(renderNavLink)}
+        <NavLink
+          to={`/${textContact}`}
+          className="large-nav-link">
+          {textContactSpakeAudio}
+        </NavLink>
       </nav>
     </header>
   );

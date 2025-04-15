@@ -24,6 +24,29 @@ main {
   text-align: center;
 }
 
+.large-nav-link,
+button[type='submit'] {
+  padding: .75rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius-medium);
+  white-space: nowrap;
+  background-color: var(--color-spake-yellow);
+  color: var(--color-spake-brown);
+  text-align: center;
+  font-size: inherit;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-application-font);
+    color: var(--color-spake-lichen);
+  }
+}
+
+.mobile-nav-is-open > .large-nav-link {
+  padding: 1rem;
+}
+
 /* Media Queries */
 
 @media (min-width: 576px) {
