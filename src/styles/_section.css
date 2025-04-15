@@ -41,7 +41,7 @@ section {
 }
 
 .section-large-nav-link,
-.form-submit-button {
+button[type='submit'] {
   padding: 1rem 2rem;
   border: 2px solid var(--color-application-font);
   border-radius: var(--border-radius-large);
@@ -57,31 +57,4 @@ section {
     background-color: var(--color-spake-yellow);
     color: var(--color-spake-brown);
   }
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 25rem;
-  margin-top: 2rem;
-}
-
-.form-input-wrapper {
-  display: flex;
-  flex-direction: column;
-  margin-top: 1rem;
-}
-
-.form-input {
-  padding: .5rem;
-}
-
-.required-star {
-  color: var(--color-spake-red);
-}
-
-.form-submit-button-wrapper {
-  display: flex;
-  justify-content: center;
 }

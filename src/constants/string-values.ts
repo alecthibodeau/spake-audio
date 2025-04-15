@@ -90,7 +90,7 @@ const sections: SectionProps[] = [
   },
   {
     heading: textContact,
-    description: 'We\'re looking forward to hearing from you. Complete and submit the following form to get in touch with Spake Audio.'
+    description: 'We\'re looking forward to hearing from you. Complete and submit the following form to get in touch with Spake Audio. The asterisk (*) indicates a required field.'
   }
 ];
 
