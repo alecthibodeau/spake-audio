@@ -30,7 +30,6 @@ const urlSendForm: string = 'https://api.emailjs.com/api/v1.0/email/send-form';
 const textTime: string = 'time';
 
 const headerNavRoutes = [textRecording, textEditing, textConsulting, textAbout, textFAQ];
-const formInputs: string[] = [textName, textEmail, textPhone, textMessage];
 
 const companies: Company[] = [
   {
@@ -111,7 +110,6 @@ const stringValues = {
   emailTemplateId,
   emailPublicKey,
   errorMessages,
-  formInputs,
   headerNavRoutes,
   inputFieldNames,
   sections,
