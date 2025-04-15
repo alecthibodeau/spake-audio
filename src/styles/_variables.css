@@ -6,7 +6,15 @@
   --breakpoint-xl: 1200px;
   --breakpoint-xxl: 1400px;
 
-  /* Colors */
+  /* Colors Grayscale */
+  --color-black: #000;
+  --color-white: #fff;
+  --color-thirty-five-percent-gray: #a6a6a6;
+  --color-fifty-percent-gray: #7f7f7f;
+  --color-eighty-percent-gray: #333;
+  --color-dark-film: rgb(30 30 30 / 0.9);
+
+  /* Colors Hued */
   --color-spake-green: #2e7e19;
   --color-spake-lichen: #f3f8f2;
   --color-spake-blue: #1874ff;
@@ -16,11 +24,6 @@
   --color-spake-brown: #531009;
   --color-spake-umber: #5a4c4c;
   --color-spake-red: #c21731;
-
-  --color-fifty-percent-gray: #7f7f7f;
-  --color-eighty-percent-gray: #333;
-  --color-dark-film: rgb(30 30 30 / 0.9);
-
   --color-application-font: var(--color-spake-brown);
 
   /* Dimensions */

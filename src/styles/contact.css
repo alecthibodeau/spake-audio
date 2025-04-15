@@ -1,0 +1,34 @@
+@import url('./_variables');
+
+.contact-container {
+  margin: 0 auto;
+  max-width: var(--breakpoint-md);
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: .375rem;
+}
+
+.required {
+  color: var(--color-spake-red);
+}
+
+.input-field,
+.textarea-field {
+  border: 1px solid var(--color-thirty-five-percent-gray);
+  width: 100%;
+}
+
+.error-messages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .125rem 1rem;
+  color: var(--color-spake-red);
+}
+
+.submit-button-container {
+  display: flex;
+  justify-content: center;
+}

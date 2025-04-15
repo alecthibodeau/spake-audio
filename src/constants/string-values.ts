@@ -15,12 +15,22 @@ const textConsulting: string = 'consulting';
 const textAbout: string = 'about';
 const textContact: string = 'contact';
 const textContactSpakeAudio: string = 'Contact Spake Audio';
-const textName: string = 'name';
 const textEmail: string = 'email';
-const textPhone: string = 'phone';
+const textName: string = 'name';
 const textMessage: string = 'message';
 const textModal: string = 'Thanks! Someone from Spake Audio will get back to you soon.';
+const textPhone: string = 'phone';
+const textText: string = 'text';
+
+const emailServiceId: string = 'service_motlos2';
+const emailTemplateId: string = 'template_twmeleg';
+const emailPublicKey: string = 'rv9Ct6p5U0kLM8po5';
+const inputFieldNames: string[] = ['name', 'email', 'phone', 'message'];
+const urlSendForm: string = 'https://api.emailjs.com/api/v1.0/email/send-form';
+const textTime: string = 'time';
+
 const headerNavRoutes = [textRecording, textEditing, textConsulting, textAbout, textFAQ];
+const formInputs: string[] = [textName, textEmail, textPhone, textMessage];
 
 const companies: Company[] = [
   {
@@ -53,8 +63,6 @@ const companies: Company[] = [
   }
 ];
 
-const formInputs: string[] = [textName, textEmail, textPhone, textMessage];
-
 const sections: SectionProps[] = [
   {
     heading: textWelcome,
@@ -86,21 +94,41 @@ const sections: SectionProps[] = [
   }
 ];
 
+const errorMessages: { [key: string]: string } = {
+  allRequiredFields: 'Please fill out all required fields.',
+  formReferenceNull: 'Form reference is null.',
+  invalidEmail: 'Invalid email address.',
+  tryAgain: 'There was an error. Please try again.'
+};
+
+const svgPaths: { [key: string]: string } = {
+  closingX: '125.66 76.67 90.42 41.43 125.66 6.19 120.71 1.24 85.47 36.48 50.23 1.24 45.28 6.19 80.52 41.43 45.28 76.66 50.23 81.61 85.47 46.38 120.71 81.62 125.66 76.67'
+};
+
 const stringValues = {
   companies,
+  emailServiceId,
+  emailTemplateId,
+  emailPublicKey,
+  errorMessages,
+  formInputs,
   headerNavRoutes,
+  inputFieldNames,
   sections,
-  textModal,
-  textWelcome,
+  svgPaths,
   textAbout,
   textContact,
   textContactSpakeAudio,
-  textName,
   textEmail,
-  textPhone,
-  textMessage,
   textFAQ,
-  formInputs
+  textMessage,
+  textModal,
+  textName,
+  textPhone,
+  textText,
+  textTime,
+  textWelcome,
+  urlSendForm
 };
 
 export default stringValues;
