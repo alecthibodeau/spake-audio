@@ -57,21 +57,13 @@ function Section(props: SectionProps): JSX.Element {
     );
   }
 
-  function renderContactLink(isTextLink: boolean): JSX.Element {
+  function renderContactLink(): JSX.Element {
     return (
       <NavLink
         to={`/${textContact}`}
-        className={isTextLink ? 'section-text-link' : 'large-nav-link'}>
+        className="large-nav-link">
         {textContactSpakeAudio}
       </NavLink>
-    );
-  }
-
-  function renderInlineContactLink(): JSX.Element {
-    return (
-      <span>
-        <span>&nbsp;</span>{renderContactLink(true)}<span>.</span>
-      </span>
     );
   }
 
@@ -92,11 +84,10 @@ function Section(props: SectionProps): JSX.Element {
           {renderHeadingText(props.heading)}
         </h1>
         <div className="section-description">
-          <span>{props.description}</span>
-          {isAbout ? renderInlineContactLink() : null}
+          <span>{props.description}&hellip;</span>
         </div>
+        {!isContact ? renderContactLink() : null}
         {isAbout ? renderSectionThumbnails() : null}
-        {!isAbout && !isContact ? renderContactLink(false) : null}
         {isContact ?
           <Contact
             onSubmitForm={() => setIsLoading(true)}

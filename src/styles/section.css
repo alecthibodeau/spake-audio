@@ -34,14 +34,3 @@ section {
   height: 100px;
   background-color: var(--color-fifty-percent-gray);
 }
-
-.section-text-link {
-
-  &:visited {
-    color: inherit;
-  }
-
-  &:hover {
-    text-decoration-color: var(--color-spake-blue);
-  }
-}

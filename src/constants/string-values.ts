@@ -21,13 +21,13 @@ const textMessage: string = 'message';
 const textModal: string = 'Thanks! Someone from Spake Audio will get back to you soon.';
 const textPhone: string = 'phone';
 const textText: string = 'text';
+const textTime: string = 'time';
 
 const emailServiceId: string = 'service_motlos2';
 const emailTemplateId: string = 'template_twmeleg';
 const emailPublicKey: string = 'rv9Ct6p5U0kLM8po5';
 const inputFieldNames: string[] = ['name', 'email', 'phone', 'message'];
 const urlSendForm: string = 'https://api.emailjs.com/api/v1.0/email/send-form';
-const textTime: string = 'time';
 
 const headerNavRoutes = [textRecording, textEditing, textConsulting, textAbout, textFAQ];
 
@@ -65,23 +65,23 @@ const companies: Company[] = [
 const sections: SectionProps[] = [
   {
     heading: textWelcome,
-    description: 'Spake Audio is a production house based in Providence, Rhode Island offering producing, casting, recording, editing, proofing, mastering and consulting services for audiobooks and podcasts. The studio can also be linked to remote producers, directors and engineers for ADR/looping and gaming voiceovers. Get in touch to plan your next project:'
+    description: 'Spake Audio is a production house based in Providence, Rhode Island that offers producing, casting, recording, editing, proofing and mastering services for audiobooks, podcasts, narrated articles and other spoken media. Our fully-equipped, sound-isolated recording studio can also link to remote producers, directors and engineers for looping/dubbing with Automated Dialogue Replacement (ADR) and gaming voiceovers. We also offer consultation services. Our clients include entities of various sizes: companies, schools, organizations, individual narrators and more. Get in touch to plan your next project'
   },
   {
     heading: textRecording,
-    description: 'We record your projects with care and professionalism in our comfortable, residential studio. During session breaks relax on our spacious balcony with views of the Providence skyline. We want to hear what you hope to accomplish:'
+    description: 'We record your projects with care and professionalism in our comfortable studio that\'s adjacent to downtown Providence and close to amenities like coffee shops, a grocery store and an electric vehicle charging facility. We\'re near Providence station, which offers easy travel by train to and from Boston and New York City. During session breaks relax in our lounge area, in our kitchen or on our spacious balcony with expansive views of the city\'s skyline. Have an idea for a recording project? We want to hear about it'
   },
   {
     heading: textEditing,
-    description: 'Do you have audio recordings that need editing, proofing or mastering? We accept files in standard formats and make your work sound its absolute best. Our turnaround times are fast. Let us know a bit more about your project:'
+    description: 'Do you have existing audio that need editing, proofing or mastering? We have deep experience in these areas, and we accept digital files in various formats for smooth audio processing. We want your work to sound its absolute best, and our turnaround times are fast. Tell us about your project'
   },
   {
     heading: textConsulting,
-    description: 'Many voice professionals want to set up their own home recording studios. But where to start? We can guide you in such areas as gear selection and sound isolation techniques. Tell us what you have in mind:'
+    description: 'Many voice professionals want to set up their own recording studios, but don\'t know where to start. We can guide you in such areas as gear selection, microphone placement and sound isolation techniques. Write to arrange a consultation'
   },
   {
     heading: textAbout,
-    description: 'Spake Audio is operated by musician and recording engineer Joel Thibodeau. We\'ve produced many projects over the years. Below are some of our favorites.'
+    description: 'Spake Audio is operated by musician and recording engineer Joel Thibodeau. We\'ve produced many projects over the years. Below are some of our favorites'
   },
   {
     heading: textFAQ,
