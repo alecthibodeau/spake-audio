@@ -1,5 +1,11 @@
 @import url('./_variables');
 
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -15,6 +21,7 @@ body {
 main {
   position: relative;
   top: 60px;
+  flex: 1;
   display: flex;
   justify-content: center;
   line-height: 1.5rem;
