@@ -25,7 +25,7 @@ function Section(props: SectionProps): JSX.Element {
     textFAQ,
     textContactSpakeAudio
   } = stringValues;
-  const { formatTitleCase } = formatText;
+  const { formatEachWordInTitleCase } = formatText;
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isModalDisplayed, setIsModalDisplayed] = useState<boolean>(false);
 
@@ -40,7 +40,7 @@ function Section(props: SectionProps): JSX.Element {
   }
 
   function renderHeadingText(heading: string): string {
-    return isFAQ ? heading.toUpperCase() : formatTitleCase(heading);
+    return isFAQ ? heading.toUpperCase() : formatEachWordInTitleCase(heading);
   }
 
   function renderThumbnail(thumbnailImage: string, index: number): JSX.Element {

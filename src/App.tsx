@@ -13,6 +13,9 @@ import SectionProps from './interfaces/SectionProps';
 /* Constants */
 import stringValues from './constants/string-values';
 
+/* Helpers */
+import formatText from './helpers/format-text';
+
 /* Styles */
 import './App.css';
 
@@ -20,6 +23,7 @@ export default function App() {
   const [isBreakpointXs, setIsBreakpointXs] = useState<boolean>(true);
   const [viewportWidth, setViewportWidth] = useState<number>(window.innerWidth);
   const { sections, textWelcome } = stringValues;
+  const { formatDashes} = formatText;
 
   useEffect(() => {
     const breakpointSm: number = 576;
@@ -34,7 +38,8 @@ export default function App() {
   }
 
   function renderRoute(props: SectionProps): JSX.Element {
-    const routePath = `/${props.heading === textWelcome ? '' : props.heading}`;
+    const isWelcome: boolean = props.heading === textWelcome;
+    const routePath = `/${isWelcome ? '' : formatDashes(props.heading)}`;
     return (
       <Route
         key={`${props.heading}SectionRoute`}

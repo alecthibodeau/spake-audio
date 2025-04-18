@@ -5,10 +5,9 @@ footer {
   top: 60px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center;
+  justify-content: center; */
   width: 100%;
-  padding-bottom: 2rem;
   font-size: .75rem;
 }
 
@@ -68,8 +67,31 @@ footer {
   }
 }
 
+.footer-information {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: var(--color-spake-umber);
+  color: var(--color-spake-lichen);
+}
+
+.spake-logo-footer {
+  width: 100px;
+}
+
 .footer-copyright {
-  margin: 1rem;
+  margin-top: 3rem;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+
+.footer-right-title {
+  font-size: 1.0625rem;
+  font-weight: 600;
 }
 
 /* Media Queries */

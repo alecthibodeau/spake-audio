@@ -50,6 +50,19 @@ button[type='submit'] {
   }
 }
 
+.text-link {
+  color: inherit;
+
+  &:visited {
+    color: inherit;
+  }
+
+  &:hover {
+    color: inherit;
+    text-decoration-color: var(--color-spake-yellow);
+  }
+}
+
 .mobile-nav-is-open > .large-nav-link {
   padding: 1rem;
 }

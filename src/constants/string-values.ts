@@ -20,6 +20,7 @@ const textName: string = 'name';
 const textMessage: string = 'message';
 const textModal: string = 'Thanks! Someone from Spake Audio will get back to you soon.';
 const textPhone: string = 'phone';
+const textPrivacyPolicy: string = 'privacy policy';
 const textText: string = 'text';
 const textTime: string = 'time';
 
@@ -86,6 +87,10 @@ const sections: SectionProps[] = [
   {
     heading: textFAQ,
     description: 'FAQ section content'
+  },
+  {
+    heading: textPrivacyPolicy,
+    description: 'Privacy Policy content'
   },
   {
     heading: textContact,
