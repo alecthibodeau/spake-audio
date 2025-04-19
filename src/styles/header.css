@@ -111,7 +111,7 @@ nav {
 
 /* Media Queries */
 
-@media (min-width: 576px) {
+@media (min-width: 576px /* --breakpoint-sm */) {
 
   header {
     display: flex;
@@ -131,7 +131,7 @@ nav {
     align-items: center;
 
     width: 100%;
-    max-width: 50rem;
+    max-width: 40rem;
     backdrop-filter: initial;
 
     &.mobile-nav-is-closed {
@@ -163,7 +163,6 @@ nav {
   }
 
   .large-nav-link {
-    /* padding: initial; */
     margin: 0 .5rem;
   }
 }
