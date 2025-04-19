@@ -7,10 +7,12 @@
 }
 
 html {
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
 body {
+  overflow-x: hidden;
   max-width: 87.5rem;
   margin: auto;
   color: var(--color-application-font);

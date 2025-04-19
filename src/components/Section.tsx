@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 /* Components */
 import InfoModal from './InfoModal';
 import Loader from './Loader';
+import Pattern from './Pattern';
 
 /* Interfaces */
 import Contact from './Contact';
@@ -27,12 +28,26 @@ function Section(props: SectionProps): JSX.Element {
   } = stringValues;
   const { formatEachWordInTitleCase } = formatText;
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isBreakpointXs, setIsBreakpointXs] = useState<boolean>(true);
   const [isModalDisplayed, setIsModalDisplayed] = useState<boolean>(false);
+  const [viewportWidth, setViewportWidth] = useState<number>(window.innerWidth);
 
+  const breakpointSm: number = 576;
   const thumbnails: string[] = Array(10).fill('thumbnail-image');
   const isAbout: boolean = props.heading === textAbout;
   const isContact: boolean = props.heading === textContact;
   const isFAQ: boolean = props.heading === textFAQ;
+  const resize: string = 'resize';
+
+  useEffect(() => {
+    window.addEventListener(resize, getViewportWidth);
+    setIsBreakpointXs(viewportWidth < breakpointSm);
+    return(() => window.removeEventListener(resize, getViewportWidth));
+  }, [viewportWidth]);
+
+  function getViewportWidth(): void {
+    setViewportWidth(window.innerWidth);
+  }
 
   function handleSuccessfulSubmission(): void {
     setIsLoading(false);
@@ -78,7 +93,10 @@ function Section(props: SectionProps): JSX.Element {
           /> :
         null
       }
-      <div className="image-placeholder"></div>
+      <Pattern
+        isBreakpointXs={isBreakpointXs}
+        viewportWidth={viewportWidth}
+      />
       <div className="section-content">
         <h1>
           {renderHeadingText(props.heading)}

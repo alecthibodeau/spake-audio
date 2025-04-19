@@ -1,0 +1,20 @@
+@import url('./_variables');
+
+.pattern-blue {
+  background-color: var(--color-spake-blue);
+}
+
+.pattern-unit-row {
+  display: flex;
+  opacity: .5;
+}
+
+.pattern-unit {
+  min-width: 25px;
+  height: 25px;
+  background-color: var(--color-spake-green);
+
+  &.top-left {
+    border-top-left-radius: 100%;
+  }
+}
