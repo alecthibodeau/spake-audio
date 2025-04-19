@@ -17,12 +17,10 @@ import '../styles/footer.css';
 function Footer(): JSX.Element {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const { spakeLogoLichen } = images.header;
-  const { companies } = stringValues;
-  const { formatLettersAndNumbers } = formatText;
+  const { companies, footerRoutes, textFAQ } = stringValues;
+  const { formatDisplayedRouteName, formatLettersAndNumbers } = formatText;
   const isMotionReduced: boolean = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const hiddenCompanies = companies.map(company => ({...company, isHidden: true}));
-
-  const footerRoutes: string[] = ['About', 'FAQ', 'Privacy Policy'];
 
   useEffect(() => {
     if (!isMotionReduced) scrollerRef.current?.setAttribute('data-animated', 'true');
@@ -51,7 +49,8 @@ function Footer(): JSX.Element {
       <Link
         key={`route-${formattedRoute}`}
         className="text-link"
-        to={formattedRoute}>{routeName}
+        to={formattedRoute}>
+        {formatDisplayedRouteName(routeName, routeName === textFAQ)}
       </Link>
     );
   }
@@ -73,14 +72,13 @@ function Footer(): JSX.Element {
                 src={spakeLogoLichen}
                 alt="Spake Audio logo" />
             </Link>
-            <div>Providence, Rhode Island USA</div>
+            <div className="location">Providence, Rhode Island USA</div>
           </div>
           <div className="footer-copyright">
-            {`Copyright Spake Audio ${new Date().getFullYear()}`}
+            &copy;{` Spake Audio ${new Date().getFullYear()}`}
           </div>
         </div>
         <div className="footer-right">
-          <div className="footer-right-title">MORE</div>
           {footerRoutes.map(renderFooterLink)}
         </div>
       </div>

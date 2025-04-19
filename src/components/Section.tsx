@@ -26,7 +26,7 @@ function Section(props: SectionProps): JSX.Element {
     textFAQ,
     textContactSpakeAudio
   } = stringValues;
-  const { formatEachWordInTitleCase } = formatText;
+  const { formatDisplayedRouteName } = formatText;
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isBreakpointXs, setIsBreakpointXs] = useState<boolean>(true);
   const [isModalDisplayed, setIsModalDisplayed] = useState<boolean>(false);
@@ -36,7 +36,7 @@ function Section(props: SectionProps): JSX.Element {
   const thumbnails: string[] = Array(10).fill('thumbnail-image');
   const isAbout: boolean = props.heading === textAbout;
   const isContact: boolean = props.heading === textContact;
-  const isFAQ: boolean = props.heading === textFAQ;
+  const isHeadingUpperCase: boolean = props.heading === textFAQ;
   const resize: string = 'resize';
 
   useEffect(() => {
@@ -52,10 +52,6 @@ function Section(props: SectionProps): JSX.Element {
   function handleSuccessfulSubmission(): void {
     setIsLoading(false);
     setIsModalDisplayed(true);
-  }
-
-  function renderHeadingText(heading: string): string {
-    return isFAQ ? heading.toUpperCase() : formatEachWordInTitleCase(heading);
   }
 
   function renderThumbnail(thumbnailImage: string, index: number): JSX.Element {
@@ -99,7 +95,7 @@ function Section(props: SectionProps): JSX.Element {
       />
       <div className="section-content">
         <h1>
-          {renderHeadingText(props.heading)}
+          {formatDisplayedRouteName(props.heading, isHeadingUpperCase)}
         </h1>
         <div className="section-description">
           <span>{props.description}&hellip;</span>

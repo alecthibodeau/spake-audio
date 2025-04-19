@@ -20,13 +20,17 @@ function formatEachWordInTitleCase(text: string): string {
   return text.split(' ').map(formatTitleCase).join(' ');
 }
 
+function formatDisplayedRouteName(routeName: string, isUpperCase?: boolean): string {
+  return isUpperCase ? routeName.toUpperCase() : formatEachWordInTitleCase(routeName);
+}
+
 const formatText = {
   allNonDigits,
   validEmail,
   formatDashes,
   formatLettersAndNumbers,
   formatTitleCase,
-  formatEachWordInTitleCase,
+  formatDisplayedRouteName
 };
 
 export default formatText;

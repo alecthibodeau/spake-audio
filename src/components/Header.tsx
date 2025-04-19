@@ -5,6 +5,9 @@ import { Link, NavLink } from 'react-router-dom';
 import images from '../constants/images';
 import stringValues from '../constants/string-values';
 
+/* Helpers */
+import formatText from '../helpers/format-text';
+
 /* Styles */
 import '../styles/header.css';
 
@@ -12,6 +15,7 @@ function Header(props: { isBreakpointXs: boolean }): JSX.Element {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState<boolean>(false);
   const { spakeLogoGreen, spakeLogoLichen } = images.header;
   const { textContact, textContactSpakeAudio } = stringValues;
+  const { formatDisplayedRouteName } = formatText;
 
   useEffect(() => {
     const mainElement: HTMLElement | null = document.getElementById('main');
@@ -41,14 +45,14 @@ function Header(props: { isBreakpointXs: boolean }): JSX.Element {
     )
   }
 
-  function renderNavLink(linkText: string): JSX.Element {
+  function renderNavLink(routeText: string): JSX.Element {
     return (
-      <div className="nav-link-wrapper" key={`linkTo${linkText}`}>
+      <div className="nav-link-wrapper" key={`linkTo${routeText}`}>
         <NavLink
-          to={`/${linkText}`}
+          to={`/${routeText}`}
           className={({ isActive }) => `nav-link ${isActive ? 'nav-link-active' : ''}`}
           onClick={closeMobileNav}>
-          {linkText === stringValues.textFAQ ? linkText.toUpperCase() : linkText}
+          {formatDisplayedRouteName(routeText)}
         </NavLink>
       </div>
     );
@@ -75,7 +79,7 @@ function Header(props: { isBreakpointXs: boolean }): JSX.Element {
         : null}
       </div>
       <nav className={`mobile-nav-is-${isMobileNavOpen ? 'open' : 'closed'}`}>
-        {stringValues.headerNavRoutes.map(renderNavLink)}
+        {stringValues.headerRoutes.map(renderNavLink)}
         <NavLink
           to={`/${textContact}`}
           className="large-nav-link">

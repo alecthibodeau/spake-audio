@@ -30,7 +30,8 @@ const emailPublicKey: string = 'rv9Ct6p5U0kLM8po5';
 const inputFieldNames: string[] = ['name', 'email', 'phone', 'message'];
 const urlSendForm: string = 'https://api.emailjs.com/api/v1.0/email/send-form';
 
-const headerNavRoutes = [textRecording, textEditing, textConsulting];
+const headerRoutes: string[] = [textRecording, textEditing, textConsulting];
+const footerRoutes: string[] = [textAbout, textFAQ, textPrivacyPolicy];
 
 const companies: Company[] = [
   {
@@ -115,7 +116,8 @@ const stringValues = {
   emailTemplateId,
   emailPublicKey,
   errorMessages,
-  headerNavRoutes,
+  headerRoutes,
+  footerRoutes,
   inputFieldNames,
   sections,
   svgPaths,
