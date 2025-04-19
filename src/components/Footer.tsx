@@ -48,7 +48,11 @@ function Footer(): JSX.Element {
   function renderFooterLink(routeName: string): React.JSX.Element {
     const formattedRoute: string = `/${routeName.replace(/\s+/g, '-').toLowerCase()}`
     return (
-      <Link className="text-link" to={formattedRoute}>{routeName}</Link>
+      <Link
+        key={`route-${formattedRoute}`}
+        className="text-link"
+        to={formattedRoute}>{routeName}
+      </Link>
     );
   }
 
